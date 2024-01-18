@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+{% extends 'testapp1/base1.html' %}
+    {% block base %}
+        <div class="container" style="text-align: center;">
+            <h1>Update Student's Information</h1><hr>
+            <form method="post" style="text-align: center;">
+                {% csrf_token %}
+                <div class="container" align="center">
+                <table class="table table-striped" >
+                    <tr>
+                        <td>Student Number:</td>
+                        <td><input type="number" name="sno" value="{{data.sno}}"><br><br></td>
+                    </tr>
+                    <tr>
+                        <td>Student Name:</td>
+                        <td><input type="text" name="sname" value="{{data.sname}}"><br><br></td>
+                    </tr>
+                    <tr>
+                        <td>Student Mark:</td>
+                        <td><input type="number" name="smark" value="{{data.smark}}"><br><br></td>
+                    </tr>
+                    <tr>
+                        <td>Student Address:</td>
+                        <td><input type="text" name="saddr" value="{{data.saddr}}"><br><br></td>
+                    </tr>
+                </table>
+            </div>
+                <input class="btn btn-primary" type="submit">
+            </form><br>
+            <a class="btn btn-primary" href="/app1/sdata">Table</a>&nbsp&nbsp&nbsp
+            <a class="btn btn-primary" href="/app1/home">Home</a>
+        </div>
+    {% endblock %}

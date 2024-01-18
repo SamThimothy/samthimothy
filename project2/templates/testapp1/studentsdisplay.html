@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% extends 'testapp1/base1.html' %}
+    {% block base %}
+        <div style="text-align: center;">
+            <h1>Student's Information Table</h1><hr>
+            {% if data %}
+                <table class="table table-striped">
+                    <thead>
+                        <td>Student Number</td>
+                        <td>Student Name</td>
+                        <td>Student Mark</td>
+                        <td>Student Address</td>
+                        <td>Action</td>
+                    </thead>
+                    {% for da in data %}
+                        <tr>
+                            <td>{{da.sno}}</td>
+                            <td>{{da.sname}}</td>
+                            <td>{{da.smark}}</td>
+                            <td>{{da.saddr}}</td>
+                            <td><a class="btn btn-sm btn-outline-success" href="/app1/supdate/{{da.id}}">Update</a>&nbsp&nbsp<a class="btn btn-sm btn-outline-danger" href="/app1/sdelete/{{da.id}}">Delete</a></td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            {% else %}
+                <p>No Data Found</p>
+            {% endif %}
+            <a class="btn btn-primary" href="/app1/sform">Add</a>&nbsp&nbsp&nbsp
+            <a class="btn btn-primary" href="/app1/home">Home</a>
+        </div>
+    {% endblock %}

@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+{% extends 'testapp1/base1.html' %}
+    {% block base %}
+        <div style="text-align: center;">
+            <h1>SignUp Form</h1><hr>
+            <form method="post">
+                <table class="table table-striped" >{{form.as_table}}</table>
+                {% csrf_token %}
+                <input type="submit">
+            </form>
+        </div>
+    {% endblock %}
